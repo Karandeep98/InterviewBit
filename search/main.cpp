@@ -2,31 +2,26 @@
 using namespace std;
 int main()
 {
-    // O(n) solution without using library sort function
-    vector<int> A{0,1,2,2,2,2,1,1,1,1,0,0,0,0,2,2,1,1,2,0,1,2,0,1,2,0,1,2,2,2,1,0,1};
-    cout<<A.size()<<endl;
-    int x=0,y=0,z=0;
-   for(int i=0;i<A.size();i++){
-       if(A[i]==0) x++;
-       else if(A[i]==1) y++;
-       else z++;
-   }
-    for(int i=0;i<x;i++){
-        A[i]=0;
-    }
-    for(int i=x;i<x+y;i++){
-        A[i]=1;
-    }
-    for(int i=x+y;i<x+y+z;i++){
-        A[i]=2;
-    }
-    for(int i=0;i<A.size();i++){
-        cout<<A[i]<<" ";
-    }
-  cout<<endl<<A.size();
+    // O(n) solution when vectors A, B and C are sorted as per question
+    vector<int> A{1, 4, 5, 8, 10};
+    vector<int> B{6, 9, 15};
+    vector<int> C{ 2, 3, 7, 29 };
+    int i=A.size()-1,j=B.size()-1,k=C.size()-1,l,m,n;
+    int ans= INT_MAX;
+   while(i>=0 && j>=0 && k>=0){
+       int max1 = max(max(A[i],B[j]),C[k]);
+       int min1 = min(min(A[i],B[j]),C[k]);
+       if(abs(max1-min1)<ans){
+            l=A[i]; m=B[j]; n=C[k];
+            }
+       ans = min(ans,abs(max1-min1));
+       if(A[i]==max1) i--;
+       else if(B[j]==max1) j--;
+       else k--;
+        }
+   cout<<"Minimum absolute difference of ("<<l<<","<<m<<","<<n<<") is: "<<ans;
 
-
-            return 0;
+    return 0;
 }
   /*  vector<vector<int>> a(v.size(),vector<int>(3));
     int x=0;
