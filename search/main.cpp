@@ -3,15 +3,10 @@ using namespace std;
 
 int main()
 {
-    string s="1000";
-   /* s+=to_string(1);
-     s+=to_string(2);
-     cout<<s;*/
-     reverse(s.begin(),s.end());
-     cout<<s;
-    int x=stoi(s);
 
-    cout<<x;
+    vector<int> v{1,2,3};
+    set<int>s(v.begin(),v.end());
+    cout<<s[0];
     return 0;
 }
 
