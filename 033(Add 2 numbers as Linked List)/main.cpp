@@ -58,7 +58,7 @@ ListNode* addTwoNumbers(ListNode* A, ListNode* B) {
 
  int main()
 {
-    insertAtEnd(9);insertAtEnd(6);insertAtEnd(8);
+    insertAtEnd(9);insertAtEnd(6); insertAtEnd(8);
     ListNode* a=head;
     print(a);
     head=NULL;
