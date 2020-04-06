@@ -8,6 +8,7 @@ struct ListNode {
   };
 struct ListNode* head=NULL;
 
+
 void print(ListNode* a){
         while(a!= NULL){
 
